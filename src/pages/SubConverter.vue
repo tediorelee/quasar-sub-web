@@ -34,6 +34,7 @@
 							color="primary"
 							:label="$t('sub.text.importToClash')"
 							:disable="customSubUrl.length === 0"
+							@click="importClash"
 							/>
 					</div>
 				</div>
@@ -83,7 +84,7 @@
 </template>
 
 <script>
-import { copyToClipboard } from 'quasar';
+import { copyToClipboard, openURL } from 'quasar';
 
 // const project = process.env.VUE_APP_PROJECT;
 
@@ -266,6 +267,10 @@ export default {
 		},
 		welcomeMsg () {
 			this.$q.notify.info(this.$t('本服务基于@CareyWang/sub-web搭建，请输入你的订阅链接，选择对应的远程即可。'));
+		},
+		importClash () {
+			const url = 'clash://install-config?url=';
+			openURL(url + encodeURIComponent(this.customSubUrl));
 		}
 	}
 };
