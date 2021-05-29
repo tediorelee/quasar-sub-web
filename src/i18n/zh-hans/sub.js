@@ -16,6 +16,7 @@ export default {
 		subLinkDesc: 'Support ss/ssr/vmess, for multiple url pls use | to separate them',
 		clientDesc: 'Only clash is supported for now',
 		linkCopiedMsg: 'Link copied',
-		error: 'Please correct the errors'
+		error: 'Please correct the errors',
+		customFileName: 'Config file name you want'
 	}
 };
